@@ -6,3 +6,6 @@ https://confluence.cornell.edu/display/SIMULATION/FLUENT+Learning+Modules
 
 ## Simace2023 Register  
 http://track.maillink.co.kr/procresponse?a=2I-17235485I-41964I-4goaSoZE-8zPqrCF-144925709I-4ehhgzE-8D-7D-7UgaD-6SHoD-74vEDc5I-3
+
+## Iterative Method  
+https://folk.ntnu.no/leifh/teaching/tkt4140/._main057.html  
