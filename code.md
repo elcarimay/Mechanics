@@ -1,3 +1,39 @@
+
+nx = 5
+dx = 0.004
+x = np.r_[0,np.linspace(dx/2,L-dx/2,nx),L]
+t = np.r_[40,80,120]
+dt = 2
+x = np.r_[0,np.linspace(dx/2,L-dx/2,nx),L]
+T = np.zeros((len(t),len(x)))
+TB = 0
+aP0 = pc*dx/dt
+def aW(n):
+    if n == 1: return 0
+    else: return -k/dx
+
+def aE(n):
+    if n == 5: return 0
+    else: return -k/dx
+
+def Sp(n):
+    if n == 5: return 2*k/dx
+    else: return 0
+
+def aP(n):
+    return -aW(n) -aE(n) + aP0 + Sp(n)
+
+def Su(n):
+    if n == 5: return 2*k/dx*(TB)
+    else: return 0
+
+a, b, c = list(map(aW, range(1,nx+1))),list(map(aP, range(1,nx+1))), list(map(aE, range(1,nx+1)))
+diags = a[1:-1], b, c[1:-1]
+# A = spdiags(diags, [-1,0,1], nx, nx, format="lil")
+diags
+
+
+
 def Implicit(dx, x_max, dt, t_max, legend_plot = 1):
     x, t = np.arange(0, x_max+dx, dx).round(3), np.arange(0,t_max+dt, dt).round(3)
     bc = [0,0]; lx, lt = len(x), len(t)
